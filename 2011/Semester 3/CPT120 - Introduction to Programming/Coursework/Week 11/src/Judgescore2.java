@@ -1,5 +1,4 @@
-
-public class judgescore 
+public class Judgescore2 
 {
 	public static void main(String[] Args)
 	{
