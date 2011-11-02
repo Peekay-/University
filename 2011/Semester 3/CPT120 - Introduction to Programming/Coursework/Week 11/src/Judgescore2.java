@@ -2,16 +2,7 @@ public class Judgescore2
 {
 	public static void main(String[] Args)
 	{
-		int Contestant[];
-		Contestant = new int[10];
-
-		int total;
-		int index;
-		int average;
-		int min;
-		int max;
-		int mincont;
-		int maxcont;
+		int Contestant[] = new int[10];
 
 		Contestant[0] = 2;
 		Contestant[1] = 1;
@@ -24,20 +15,25 @@ public class Judgescore2
 		Contestant[8] = 2;
 		Contestant[9] = 6;
 
-		total = 0;
-		min = 11;
-		max = -1;
-		maxcont = 0;
-		mincont = 0;
+		score(Contestant);
+	}
 
-		for (index = 0; index < 10; index = index + 1)
+	private static void score(int[] Contestant) 
+	{
+		int total = 0;
+		int min = 11;
+		int max = -1;
+		int maxcont = 0;
+		int mincont = 0;
+
+		for (int index = 0; index < Contestant.length; index = index + 1)
 		{
 			total = total + Contestant[index];
 		}
 
-		average = (total / 10);
+		int average = (total / Contestant.length);
 
-		for (index = 0; index < 10; index = index + 1)
+		for (int index = 0; index < Contestant.length; index = index + 1)
 		{
 			System.out.print("Contestant " + (index + 1) + " rated " + Contestant[index] + " out of 10, they were");
 
@@ -53,20 +49,20 @@ public class Judgescore2
 			{
 				System.out.println(" on the average");
 			}
-		}
-
-		for (index = 0; index < 10; index = index + 1)
-		{
+			
 			if (Contestant[index] < min)
 			{
 				min = Contestant[index];
 				mincont = index + 1;
 			}
+			
 			if (Contestant[index] > max)
 			{
 				max = Contestant[index];
 				maxcont = index + 1;
 			}
+
+
 		}
 
 		System.out.println("The lowest rating contestant was contestant " + mincont + " and the highest rating contestant was contestant " + maxcont);
