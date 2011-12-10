@@ -20,11 +20,10 @@ public class Assignment3
 
    public static void computeAndDisplayGraph()
    {
-      int min = Integer.MAX_VALUE;
-      int max = Integer.MIN_VALUE;
+      int min = array[0]; 
+      int max = array[0];
       int minscore = 0;
       int maxscore = 0;
-      int barsize = 0;
       
       for (int index = 0; index < arraySize; index = index + 1)
       {
@@ -47,10 +46,10 @@ public class Assignment3
       
       for (int index = 0; index < arraySize; index = index + 1)
       {
-    	  barsize = array[index];
+    	  int barsize = array[index];
     	  System.out.print(index + ": ");
     	  
-    	  for (;barsize >= 1; barsize = barsize - 1)
+    	  for (int starindex = 0; starindex < barsize; starindex = starindex + 1)
     	  {
     		  System.out.print("*");  
     	  }
