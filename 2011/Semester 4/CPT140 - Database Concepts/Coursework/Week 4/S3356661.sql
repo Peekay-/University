@@ -15,20 +15,19 @@ FROM Customers
 WHERE curr_balance >=(cr_limit - 50);
 
 /* Question 4 */
-SELECT prod_group, AVG(DISTINCT list_price)
-FROM Products;
+SELECT prod_group, AVG(list_price)
+FROM Products
+GROUP BY prod_group;
 
 /* Question 5 */
-SELECT prod_cod, prod_group, SUM(list_price * qty_on_hand AS Total)
-FROM Products;
-
-SELECT prod_group, Total
+SELECT prod_group, SUM(list_price * qty_on_hand) 
 FROM Products
-HAVING Count(*) >=2000;
+GROUP BY prod_group
+HAVING SUM(list_price * qty_on_hand)  >= 2000;
 
 /* Question 6 */
 SELECT prod_cod
 FROM Products
-WHERE Description LIKE '%Trough%' OR LIKE '%Tank%';
+WHERE Description LIKE '%Trough%' OR Description LIKE '%Tank%';
 
 
